@@ -1,0 +1,41 @@
+{
+  "name": "pdf-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chat with your PDFs — Next.js RAG app with Clerk, Neon, Pinecone, and OpenAI",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "db:migrate": "node scripts/run-migration.mjs",
+    "db:check": "node scripts/check-db.mjs",
+    "pinecone:setup": "node scripts/setup-pinecone.mjs"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^7.5.9",
+    "@langchain/community": "^1.1.29",
+    "@langchain/core": "^1.2.1",
+    "@langchain/openai": "^1.5.3",
+    "@langchain/textsplitters": "^1.0.1",
+    "@pinecone-database/pinecone": "^8.0.0",
+    "@supabase/supabase-js": "^2.109.0",
+    "next": "16.2.9",
+    "openai": "^6.45.0",
+    "pdf-parse": "^2.4.5",
+    "pg": "^8.22.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/pg": "^8.21.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

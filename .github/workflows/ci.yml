@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run lint
+
+      - run: npm run build
+        env:
+          # Placeholder values so the build can compile without real secrets.
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_test_placeholder
+          CLERK_SECRET_KEY: sk_test_placeholder
+          OPENAI_API_KEY: sk-placeholder
+          PINECONE_API_KEY: placeholder
+          PINECONE_INDEX_NAME: ai-web-kit
+          DATABASE_URL: postgresql://user:pass@localhost:5432/test?sslmode=require
