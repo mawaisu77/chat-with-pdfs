@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   serverExternalPackages: [
-    "@langchain/community",
     "pdf-parse",
     "pdfjs-dist",
   ],
